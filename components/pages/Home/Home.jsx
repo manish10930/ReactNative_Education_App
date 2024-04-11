@@ -2,6 +2,8 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
 import Services from '../../../shared/Services'
 import AuthContext from '../../../context/AuthContext'
+import WelcomScreen from '../WelcomeScreen/WelcomScreen'
+import SearchBar from '../Serachbar/SearchBar'
 export default function Home() {
 
   const {userData,setUserData}=useContext(AuthContext)
@@ -12,11 +14,9 @@ export default function Home() {
      setUserData("")
   }
   return (
-    <View style={{flex:1}} >
-      <Text >Home is here</Text>
-      <TouchableOpacity style={{backgroundColor:"red", padding:10,width:100}} onPress={()=>handleLogout()} >  
-        <Text>Logout</Text>
-      </TouchableOpacity>
+    <View style={{padding:20, backgroundColor:"#F4F5FA"}} >
+        <WelcomScreen/>
+        <SearchBar/>
     </View>
   )
 }

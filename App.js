@@ -6,6 +6,7 @@ import Login from './components/pages/loginpage/Login';
 import Home from './components/pages/Home/Home';
 import Profile from './components/pages/Profile/Profile';
 
+
 export default function App() {
   const [userData, setUserData] = useState(null); 
   console.log("userData===>",userData)
@@ -16,6 +17,7 @@ export default function App() {
       <AuthContext.Provider value={{ userData, setUserData }}>
 
         {userData ? <Home /> : <Login />}
+        {/* <Video/> */}
         {/* <Login/> */}
         {/* <Profile/> */}
       </AuthContext.Provider>
